@@ -19,7 +19,10 @@ int main()
         perror("Error creating thread.");
         return	EXIT_FAILURE;
     }
-    pthread_join(thread, NULL);
+    if(pthread_join(thread, NULL) == -1) {
+        perror("Error joining thread.");
+        return	EXIT_FAILURE;
+    };
     printf("Closing thread...\n");
     return EXIT_SUCCESS;
 }
