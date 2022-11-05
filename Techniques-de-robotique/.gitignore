@@ -1,1 +1,11 @@
-./src
+src/.ros
+
+src/catkin_ws/build
+src/catkin_ws/devel
+src/catkin_ws/docker
+
+src/.bash_history
+src/catkin_ws/.catkin_workspace
+
+
+
