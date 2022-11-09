@@ -13,13 +13,13 @@ $ docker build -t ros-dev .
 Ensuite, utilise cette commande pour lancer le `roscore` dans le même terminal:
 
 ```shell
-$ ./roscore.sh
+$ ./sh/roscore.sh
 ```
 
 Et, finalement, dans un nouveau terminal:
 
 ```shell
-$ ./ros-env.sh
+$ ./sh/ros-env.sh
 ```
 
 Cette dernière commande va te préparer l'environement ROS configuré (Où on peut lancer la simulation de la tortue, par exemple)
