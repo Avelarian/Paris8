@@ -22,7 +22,7 @@ def poseReceived(position_data): #callback
     global currentPose  
     currentPose = [position_data.x, position_data.y, position_data.theta]
 
-def moveSquare(polygon):
+def move(polygon):
 
     angleDegree = 360//polygon #degree
     angleRadius = (angleDegree * 2 * np.pi)/360
@@ -33,7 +33,7 @@ def moveSquare(polygon):
     turtleVel = Twist()
 
     rospy.init_node('moveSquare4turtleSim', anonymous=False)
-    rate = rospy.Rate(20) # 20hz
+    rate = rospy.Rate(10) # 20hz
 
     while not rospy.is_shutdown():
         global initPose, turnCCW, is_init_pose, status
@@ -73,6 +73,6 @@ def moveSquare(polygon):
 
 if __name__ == '__main__':
     try:
-        moveSquare(3)
+        move(6)
     except rospy.ROSInterruptException:
         pass
