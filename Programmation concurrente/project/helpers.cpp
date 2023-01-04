@@ -28,3 +28,17 @@ void shuffle(int *array, size_t arraySize)
         }
     }
 }
+
+bool compareStrings(char *string1, char *string2)
+{
+    int index = 0;
+    while (string1[index] != '\0' && string2[index] != '\0')
+    {
+        if (string1[index] != string2[index])
+        {
+            return false;
+        }
+        index++;
+    }
+    return string1[index] == string2[index];
+}
