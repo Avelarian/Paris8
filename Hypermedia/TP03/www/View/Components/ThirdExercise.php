@@ -8,12 +8,12 @@
                     <li>
                     <?= $key ?>
                         <ul>
-                        <?php foreach ($folder as $child): ?>
+                        <?php foreach ($folder as $childKey => $child): ?>
                             <li>
                               <?= $child ?>
                               <?php if (is_array($child)): ?>
                                   <ul>
-                                      <?php foreach ($child as $grandChild): ?>
+                                      <?php foreach ($child as $grandChildkey => $grandChild): ?>
                                           <li>
                                               <?= $grandChild ?>
                                           </li>
