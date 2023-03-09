@@ -1,0 +1,20 @@
+@import '../../../styles/card.scss';
+
+.card {
+    .quiz-form {
+        display: flex;
+        flex-direction: column;
+
+        label { 
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+        }
+
+        .button-card {
+            margin: 0 auto;
+            margin-top: 1rem;
+        }
+    }
+}

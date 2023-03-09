@@ -1,0 +1,15 @@
+@import '../../../styles/card.scss';
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    .buttons-group {
+        display: flex;
+        
+        .button-card {
+            margin: 0 auto;
+            margin-top: 1rem;
+        }
+    }
+}
