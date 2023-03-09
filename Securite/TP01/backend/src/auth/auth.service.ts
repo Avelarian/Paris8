@@ -1,4 +1,8 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotImplementedException,
+} from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import {
   comparePassword,
@@ -40,10 +44,19 @@ export class AuthService {
 
     const hashedPassword = hashPassword(password);
 
-    return this.prisma.user.create({
-      data: { username: preparedUsername, password: hashedPassword },
-      select: { username: true },
-    });
+    const user = await this.prisma.user
+      .create({
+        data: { username: preparedUsername, password: hashedPassword },
+        select: { username: true },
+      })
+      .catch((error) => {
+        console.log(error);
+        throw new NotImplementedException(
+          `Oups... Please, retry in a few minutes.`,
+        );
+      });
+
+    return user;
   }
 
   async login(loginDto: AuthDto) {
